@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">DW_MC2200</string>
+
+    <string name="datawedge_profile">DWMC2200</string>
+    <string name="datawedge_intent_broadcast_action">com.dwtest.action</string>
+
+    <string name="datawedge_intent_action">com.symbol.datawedge.api.ACTION</string>
+    <string name="datawedge_intent_key_source">com.symbol.datawedge.source</string>
+    <string name="datawedge_intent_key_label_type">com.symbol.datawedge.label_type</string>
+    <string name="datawedge_intent_key_data">com.symbol.datawedge.data_string</string>
+    <string name="datawedge_intent_key_source_legacy">com.motorolasolutions.emdk.datawedge.source</string>
+    <string name="datawedge_intent_key_label_type_legacy">com.motorolasolutions.emdk.datawedge.label_type</string>
+    <string name="datawedge_intent_key_data_legacy">com.motorolasolutions.emdk.datawedge.data_string</string>
+    <string name="datawedge_scanner_input_plugin">com.symbol.datawedge.api.SCANNER_INPUT_PLUGIN</string>
+    <string name="datawedge_switch_profile">com.symbol.datawedge.api.SWITCH_TO_PROFILE</string>
+    <string name="datawedge_enable_datawedge">com.symbol.datawedge.api.ENABLE_DATAWEDGE</string>
+    <string name="datawedge_enable_plugin">ENABLE_PLUGIN</string>
+
+    <string name="btn_next">ต่อไป</string>
 </resources>
