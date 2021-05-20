@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.saharatt593.dw_mc2200"
+        applicationId "com.saharatt593.dwmc2200"
         minSdkVersion 29
         targetSdkVersion 30
         versionCode 1
