@@ -7,6 +7,7 @@ import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
 
@@ -25,6 +26,7 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         setConfigBroadcastReceiver()
+        onEvent()
     }
 
     override fun onResume() {
@@ -39,6 +41,15 @@ class DetailActivity : AppCompatActivity() {
         i.putExtra(resources.getString(R.string.datawedge_enable_datawedge), true)
         i.putExtra(resources.getString(R.string.datawedge_scanner_input_plugin), resources.getString(R.string.datawedge_enable_plugin))
         sendBroadcast(i)
+    }
+
+    private fun onEvent(){
+        btn_scan.setOnClickListener {
+            val i = Intent()
+            i.action =resources.getString(R.string.datawedge_intent_action)
+            i.putExtra(resources.getString(R.string.datawedge_intent_key_scan_trigger), resources.getString(R.string.datawedge_start_scanning))
+            sendBroadcast(i)
+        }
     }
 
     private fun setConfigBroadcastReceiver(){
@@ -58,6 +69,8 @@ class DetailActivity : AppCompatActivity() {
             decodedData = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_data_legacy))
             decodedLabelType = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_label_type_legacy))
         }
-        Toast.makeText(this, "$decodedSource $decodedData $decodedLabelType", Toast.LENGTH_LONG).show()
+        val dataText = edit_detail.text.toString()+"\n"+decodedData
+        edit_detail.setText(dataText)
+//        Toast.makeText(this, "$decodedSource $decodedData $decodedLabelType", Toast.LENGTH_LONG).show()
     }
 }

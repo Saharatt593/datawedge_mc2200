@@ -14,7 +14,14 @@
     <string name="datawedge_scanner_input_plugin">com.symbol.datawedge.api.SCANNER_INPUT_PLUGIN</string>
     <string name="datawedge_switch_profile">com.symbol.datawedge.api.SWITCH_TO_PROFILE</string>
     <string name="datawedge_enable_datawedge">com.symbol.datawedge.api.ENABLE_DATAWEDGE</string>
+    <string name="datawedge_intent_key_scan_trigger">com.symbol.datawedge.api.SOFT_SCAN_TRIGGER</string>
+    <string name="datawedge_start_scanning">START_SCANNING</string>
     <string name="datawedge_enable_plugin">ENABLE_PLUGIN</string>
 
     <string name="btn_next">ต่อไป</string>
+    <string name="btn_commit">ยืนยัน</string>
+    <string name="btn_scan">Scan</string>
+    <string name="text_note">วิธีใช้งานเบื่องต้น \nรองรับการกดปุ่ม SCAN หรือกดปุ่มสีเหลืองใหญ่ๆที่เครื่องก็ได้ สามารถ scan ติดต่อได้เรื่อยๆ ถ้า scan จนล้นช่องสามารถเอานิ้วกดค้างในtextแล้วเลื่อนขึ้นลงได้</string>
+    <string name="text_warning">คำเตือน!! \nเมื่อทำงานแล้วห้ามนำส่องตาเด็ดขาด จาก สหรัตน์(ปอ)</string>
+    <string name="text_title_room">ระบุห้อง :</string>
 </resources>
