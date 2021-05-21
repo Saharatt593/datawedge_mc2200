@@ -21,8 +21,10 @@
     <string name="btn_next">ต่อไป</string>
     <string name="btn_commit">ยืนยัน</string>
     <string name="btn_scan">Scan</string>
-    <string name="text_note">วิธีใช้งานเบื่องต้น \nรองรับการกดปุ่ม SCAN หรือกดปุ่มสีเหลืองใหญ่ๆที่เครื่องก็ได้ สามารถ scan ติดต่อได้เรื่อยๆ ถ้า scan จนล้นช่องสามารถเอานิ้วกดค้างในtextแล้วเลื่อนขึ้นลงได้</string>
+    <string name="btn_scan_next">ห้องต่อไป</string>
+    <string name="text_note">วิธีใช้งานเบื่องต้น \nรองรับการกดปุ่ม SCAN หรือกดปุ่มสีเหลืองใหญ่ๆที่เครื่องก็ได้ สามารถ SCAN ติดต่อได้เรื่อยๆ ถ้า SCAN จนล้นช่องสามารถเอานิ้วกดค้างในtextแล้วเลื่อนขึ้นลงได้เครื่องหมาย \'>\' ใช้สำหรับบอกการขึ้นรายการใหม่ ไม่ได้เกิดจากการ SCAN</string>
     <string name="text_warning">คำเตือน!! \nเมื่อทำงานแล้วห้ามนำส่องตาเด็ดขาด จาก สหรัตน์(ปอ)</string>
     <string name="text_title_room">ระบุห้อง :</string>
     <string name="text_title_detail">ห้อง : </string>
+    <string name="text_room_add_detail">เลขที่ Scan : \n</string>
 </resources>

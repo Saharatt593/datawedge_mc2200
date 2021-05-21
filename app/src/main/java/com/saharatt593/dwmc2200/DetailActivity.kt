@@ -88,7 +88,7 @@ class DetailActivity : AppCompatActivity() {
             decodedData = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_data_legacy))
 //            decodedLabelType = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_label_type_legacy))
         }
-        val dataText = edit_detail.text.toString()+"\n"+decodedData
+        val dataText = edit_detail.text.toString()+"\n >"+decodedData
         edit_detail.setText(dataText)
 //        Toast.makeText(this, "$decodedSource $decodedData $decodedLabelType", Toast.LENGTH_LONG).show()
     }
