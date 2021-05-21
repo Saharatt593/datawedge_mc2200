@@ -4,14 +4,17 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
+    companion object {
+        const val data_key = "data_id"
+    }
+    private lateinit var titleRoom:String
 
-    var broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+   private val broadcastReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             //  Received a barcode scan
             try {
@@ -25,6 +28,7 @@ class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+        onView()
         setConfigBroadcastReceiver()
         onEvent()
     }
@@ -43,12 +47,27 @@ class DetailActivity : AppCompatActivity() {
         sendBroadcast(i)
     }
 
+    private fun onView(){
+        titleRoom = resources.getString(R.string.text_title_detail)+intent.extras?.getString(MainActivity.room_key)
+        title = titleRoom
+    }
+
     private fun onEvent(){
         btn_scan.setOnClickListener {
             val i = Intent()
             i.action =resources.getString(R.string.datawedge_intent_action)
             i.putExtra(resources.getString(R.string.datawedge_intent_key_scan_trigger), resources.getString(R.string.datawedge_start_scanning))
             sendBroadcast(i)
+        }
+
+        btn_next.setOnClickListener {
+            val intent = Intent(
+                this,
+                AddActivity::class.java
+            )
+            intent.putExtra(MainActivity.room_key,titleRoom)
+            intent.putExtra(data_key,edit_detail.text.toString())
+            startActivity(intent)
         }
     }
 
@@ -61,13 +80,13 @@ class DetailActivity : AppCompatActivity() {
 
 
     private fun displayScanResult(initiatingIntent: Intent) {
-        var decodedSource = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_source))
+        val decodedSource = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_source))
         var decodedData = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_data))
-        var decodedLabelType = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_label_type))
+//        var decodedLabelType = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_label_type))
         if (null == decodedSource) {
-            decodedSource = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_source_legacy))
+//            decodedSource = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_source_legacy))
             decodedData = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_data_legacy))
-            decodedLabelType = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_label_type_legacy))
+//            decodedLabelType = initiatingIntent.getStringExtra(resources.getString(R.string.datawedge_intent_key_label_type_legacy))
         }
         val dataText = edit_detail.text.toString()+"\n"+decodedData
         edit_detail.setText(dataText)
